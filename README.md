@@ -52,5 +52,5 @@ Pentru fiecare serviciu trebuie facuti urmatorii pasi:
 -	Creeaza imaginea de docker utilizand Dockerfile-ul prezent in radacina proiectului folosind comanda docker build -t <nume_imagine> . ;
 -   Porneste containerele de docker utilizand docker-compose-ul prezent in folderul awbd-microservices si ruland comanda docker-compose up -d;
 
-### 2.	Testarea functionalitatilor din Car wash
+### 2.	Testarea functionalitatilor din car-service, job-service, employee-service, appointment-service
 Pentru a testa endpoint-urile serviciilor car-service, job-service, employee-service, appointment-service se pot accesa link-urile acestea: http://localhost:8082/swagger-ui.html, http://localhost:8080/swagger-ui.html, http://localhost:8083/swagger-ui.html, http://localhost:8181/swagger-ui.html. 
