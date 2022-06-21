@@ -34,7 +34,7 @@ Aplicatia reprezinta o platforma prin care se pot realiza programari la o spalat
 
 ### 6.	Job-service:
 -	Aplicatie de tip REST;
--	Se pot adauga, modifica, sterge job-uri, se pot vedea toate jub-urile sau doar un anumit job dupa id;
+-	Se pot adauga, modifica, sterge job-uri, se pot vedea toate job-urile sau doar un anumit job dupa id;
 -	Proprietatile serviciului pot fi actualizate automat atunci cand sunt modificate in repository-ul de github, prin apelarea urmatorului endpoint: http://localhost:8080/actuator/refresh;
 
 
