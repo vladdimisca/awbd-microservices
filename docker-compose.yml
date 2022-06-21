@@ -1,0 +1,74 @@
+version: '2.1'
+
+services:
+
+  appointment_service:
+    image: appointmentservice
+    container_name: appointment_service
+    environment:
+      SPRING_CONFIG_IMPORT: optional:configserver:http://confserver:8070/
+    ports:
+      - '8181:8181'
+
+  job_service:
+    image: jobservice
+    container_name: job_service
+    environment:
+      SPRING_CONFIG_IMPORT: optional:configserver:http://confserver:8070/
+    ports:
+      - '8080:8080'
+
+  car_service:
+    image: carservice
+    container_name: car_service
+    environment:
+      SPRING_CONFIG_IMPORT: optional:configserver:http://confserver:8070/
+    ports:
+      - '8082:8082'
+
+  employee_service:
+    image: employeeservice
+    container_name: employee_service
+    environment:
+      SPRING_CONFIG_IMPORT: optional:configserver:http://confserver:8070/
+    ports:
+      - '8083:8083'
+
+  schedule_service:
+    image: scheduleservice
+    container_name: schedule_service
+    environment:
+      SPRING_CONFIG_IMPORT: optional:configserver:http://confserver:8070/
+    ports:
+      - '8084:8084'
+  
+  awbd_db:
+    image: mysql
+    container_name: awbd_db
+    environment:
+      MYSQL_DATABASE: 'awbd'
+      MYSQL_PASSWORD: '4321'
+      MYSQL_ROOT_PASSWORD: '4321'
+    ports:
+      - '3306:3306'
+
+  eurekaserver:
+    image: eureka
+    container_name: eurekaserver
+    environment:
+      SPRING_CONFIG_IMPORT: optional:configserver:http://confserver:8070/
+    ports:
+      - '8071:8071'
+
+  zipkinserver:
+    image: openzipkin/zipkin
+    container_name: zipkinserver
+    ports:
+      - "9411:9411"
+
+  confserver:
+    image: config-server
+    container_name: confserver
+    ports:
+      - '8070:8070'
+
