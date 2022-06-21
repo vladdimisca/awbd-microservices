@@ -25,6 +25,6 @@ public class Car {
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
-    @OneToMany(mappedBy = "car", orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "car", orphanRemoval = true, cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
     private List<Appointment> appointments;
 }

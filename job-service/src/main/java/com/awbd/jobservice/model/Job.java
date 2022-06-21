@@ -3,6 +3,7 @@ package com.awbd.jobservice.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -29,4 +30,7 @@ public class Job {
 
     @Column(name = "number_of_employees")
     private Integer numberOfEmployees;
+
+    @OneToMany(mappedBy = "job", orphanRemoval = true, cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
+    private List<Appointment> appointments;
 }

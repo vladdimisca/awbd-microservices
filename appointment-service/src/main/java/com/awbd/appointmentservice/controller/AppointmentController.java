@@ -91,7 +91,7 @@ public class AppointmentController {
             @ApiResponse(responseCode = "404", description = "Appointment not found", content = @Content)
     })
     @PutMapping(value = "/{id}", produces = {"application/hal+json"})
-    @CircuitBreaker(name = "appointment", fallbackMethod = "subscriptionFallback")
+    @CircuitBreaker(name = "appointment", fallbackMethod = "updateAppointmentFallback")
     public ResponseEntity<AppointmentDto> update(@PathVariable("id") Long id, @Valid @RequestBody AppointmentDto appointmentDto) {
         Appointment appointment = appointmentService.update(id, appointmentMapper.mapToEntity(appointmentDto));
         AppointmentDto result = appointmentMapper.mapToDto(appointment);

@@ -1,4 +1,4 @@
-package com.awbd.carservice.model;
+package com.awbd.jobservice.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,7 +7,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Getter
 @Setter
@@ -24,16 +23,7 @@ public class Appointment {
     @Column(name = "start_time")
     private LocalDateTime startTime;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    private Car car;
-
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinColumn(name = "fk_job", referencedColumnName = "id")
     private Job job;
-
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
-    @JoinTable(name = "employees_appointments",
-            joinColumns = @JoinColumn(name = "appointment_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "employee_id", referencedColumnName = "id"))
-    private List<Employee> employees;
 }
