@@ -18,7 +18,7 @@ Aplicatia reprezinta o platforma prin care se pot realiza programari la o spalat
 ### 3.	Schedule:
 -	Un serviciu care contine orele de functionare ale spalatoriei auto in application.properties;
 -	Acest serviciu este rulat in 3 instante;
--	Proprietatile serviciului pot fi actualizate automat atunci cand sunt modificate in repository-ul de github, prin apelarea urmatorului endpoint: http://localhost:8082/actuator/refresh;
+-	Proprietatile serviciului pot fi actualizate automat atunci cand sunt modificate in repository-ul de github, prin apelarea urmatorului endpoint: http://localhost:8084/actuator/refresh;
 -	Request-urile facute catre acest serviciu pot fi urmarite din Zipkin: http://localhost:9411
 
 ### 4.	Serviciul principal, Car wash:
