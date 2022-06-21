@@ -42,7 +42,7 @@ Aplicatia reprezinta o platforma prin care se pot realiza programari la o spalat
 -	Aplicatie de tip REST;
 -	Se pot adauga, modifica, sterge programari, se pot vedea toate programarile sau doar o anumita programare in functie de id;
 -	Proprietatile serviciului pot fi actualizate automat atunci cand sunt modificate in repository-ul de github, prin apelarea urmatorului endpoint: http://localhost:8181/actuator/refresh;
--	Aplicatia apeleaza serviciul schedule folosindu-se de FEIGN-proxy;
+-	Aplicatia apeleaza schedule-service, job-service, employee-service, car-service folosindu-se de FEIGN-proxy;
 
 ## B.	Scenarii de utilizare
 
