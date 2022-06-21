@@ -1,7 +1,7 @@
 # awbd-microservices
 ## A.	 Arhitectura aplicatiei
 
-Aplicatia reprezinta o platforma prin care se pot realiza programari la o spalatorie auto si contine 4 servicii care comunica intre ele.
+Aplicatia reprezinta o platforma prin care se pot realiza programari la o spalatorie auto si contine 7 servicii care comunica intre ele.
 
 ### 1.	Config-server: 
 -	Un serviciu care ajuta la actualizarea proprietatilor in timpul functionarii serviciilor schedule, eureka-namingserver, job-service, appointment-service, employee-service, car-service;
@@ -26,19 +26,19 @@ Aplicatia reprezinta o platforma prin care se pot realiza programari la o spalat
 -	Proprietatile serviciului pot fi actualizate automat atunci cand sunt modificate in repository-ul de github, prin apelarea urmatorului endpoint: http://localhost:8082/actuator/refresh;
 
 
-### 4.	Employee-service:
+### 5.	Employee-service:
 -	Aplicatie de tip REST;
 -	Se pot adauga, modifica, sterge angajati, se pot vedea toti angajatii sau doar un anumit angajat, in functie de id;
 -	Proprietatile serviciului pot fi actualizate automat atunci cand sunt modificate in repository-ul de github, prin apelarea urmatorului endpoint: http://localhost:8083/actuator/refresh;
 
 
-### 4.	Job-service:
+### 6.	Job-service:
 -	Aplicatie de tip REST;
 -	Se pot adauga, modifica, sterge job-uri, se pot vedea toate jub-urile sau doar un anumit job dupa id;
 -	Proprietatile serviciului pot fi actualizate automat atunci cand sunt modificate in repository-ul de github, prin apelarea urmatorului endpoint: http://localhost:8080/actuator/refresh;
 
 
-### 4.	Appointment-service:
+### 7.	Appointment-service:
 -	Aplicatie de tip REST;
 -	Se pot adauga, modifica, sterge programari, se pot vedea toate programarile sau doar o anumita programare in functie de id;
 -	Proprietatile serviciului pot fi actualizate automat atunci cand sunt modificate in repository-ul de github, prin apelarea urmatorului endpoint: http://localhost:8181/actuator/refresh;
