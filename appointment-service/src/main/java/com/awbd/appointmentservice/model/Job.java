@@ -31,6 +31,6 @@ public class Job {
     @Column(name = "number_of_employees")
     private Integer numberOfEmployees;
 
-    @OneToMany(mappedBy = "job", orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "job", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Appointment> appointments;
 }

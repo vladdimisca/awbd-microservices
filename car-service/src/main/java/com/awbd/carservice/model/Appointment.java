@@ -25,13 +25,14 @@ public class Appointment {
     private LocalDateTime startTime;
 
     @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "fk_car", referencedColumnName = "id")
     private Car car;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "fk_job", referencedColumnName = "id")
     private Job job;
 
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(name = "employees_appointments",
             joinColumns = @JoinColumn(name = "appointment_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "employee_id", referencedColumnName = "id"))

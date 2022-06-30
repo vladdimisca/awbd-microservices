@@ -1,4 +1,4 @@
-package com.awbd.carservice.model;
+package com.awbd.jobservice.model;
 
 import lombok.Data;
 
